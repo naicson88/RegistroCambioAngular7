@@ -17,7 +17,7 @@
             <input style="border: solid thin;"name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control" placeholder="Vl. Dólar">
         </div>
         <div class="form-group col-md-1">
-            <input style="border: solid thin;"name="parcela" #parcela="ngModel" [(ngModel)]="service.formData.parcela" class="form-control" placeholder="1">
+            <td><a class="btn tetx-danger"><i class="fa fa-plus-square" aria-hidden="true" style="color: blue;"></i></a> </td>
         </div>
     </div>
     <div class="form-row" >
@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="form-group">
-        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info" style="width: 100px;">Enviar</button>
 
     </div>
 </form>
