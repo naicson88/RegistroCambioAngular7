@@ -1,0 +1,32 @@
+<table class="table table-hover" style="width: 130%;" style="font-size: small;">
+    <thead>
+        <th>Vencimento</th>
+        <th>Fornecedor</th>
+        <th>Vl.Dólar</th>
+        <th>Cotação</th>
+        <th>Vl.Real</th>
+        <th>Fechamento</th>
+        <th>Banco</th>
+        <th>Contrato</th>
+        <th>Modal</th>
+        <th>BL/HAWB</th>
+        <th></th>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of list">
+            <td (click)="onEdit(emp)" width="10px">{{emp.dtVenc}} </td> 
+            <td (click)="onEdit(emp)" width="100px">{{emp.fullName}} </td>  
+            <td (click)="onEdit(emp)" width="10%">{{emp.vlDolar}}</td>
+            <td (click)="onEdit(emp)" width="10%">{{emp.cotacao}}</td>
+            <td (click)="onEdit(emp)" width="10%">{{emp.vlReal}}</td>
+            <td (click)="onEdit(emp)" width="10%">{{emp.dtFecha}}</td>
+            <td (click)="onEdit(emp)" width="10%">{{emp.banco}}</td>
+            <td (click)="onEdit(emp)" width="20%">{{emp.contrato}}</td>
+            <td (click)="onEdit(emp)" width="10%">{{emp.modal}}</td>
+            <td (click)="onEdit(emp)" width="20%">{{emp.nBlHawb}}</td>
+
+            <td><a class="btn tetx-danger" (click)="onDelete(emp.id)"><i class="fa fa-trash"></i></a> </td>
+        </tr>
+    </tbody>
+</table>

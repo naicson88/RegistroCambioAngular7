@@ -1,0 +1,67 @@
+<h1 class="display-5" style="margin-bottom: 20px;">Register</h1>
+<form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" >
+    <input type="hidden"  name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input style="border: solid thin;" name="dtVenc" #dtVenc="ngModel" [(ngModel)]="service.formData.dtVenc" class="form-control" placeholder="Vencimento">
+        </div>
+        <div class="form-group col-md-8">
+            <input style="border: solid thin;" name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Fornecedor" required>
+            <div *ngIf="fullName.invalid && fullName.touched" class="validation-error" style="color: red;">This field is required</div>
+        </div>
+    </div>
+
+    <div class="form-row" >
+        <div class="form-group col-md-4">
+            <input style="border: solid thin;"name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control" placeholder="Vl. Dólar">
+        </div>
+        <div class="form-group col-md-1">
+            <input style="border: solid thin;"name="parcela" #parcela="ngModel" [(ngModel)]="service.formData.parcela" class="form-control" placeholder="1">
+        </div>
+    </div>
+    <div class="form-row" >
+        <div class="form-group col-md-3">
+            <input style="border: solid thin;"name="cotacao" #cotacao="ngModel" [(ngModel)]="service.formData.cotacao" class="form-control" placeholder="Cotação">
+        </div>
+        <div class="form-group col-md-4">
+            <input style="border: solid thin;"name="vlReal" #vlReal="ngModel" [(ngModel)]="service.formData.vlReal" class="form-control" placeholder="Vl. Real">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input style="border: solid thin;"name="dtFecha" #dtFecha="ngModel" [(ngModel)]="service.formData.dtFecha" class="form-control" placeholder="Fechamento">
+        </div>
+        <div class="form-group col-md-8">
+            <input style="border: solid thin;"name="banco" #banco="ngModel" [(ngModel)]="service.formData.banco" class="form-control" placeholder="Banco" required>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input style="border: solid thin;"name="contrato" #contrato="ngModel" [(ngModel)]="service.formData.contrato" class="form-control" placeholder="Nº Contrato" >
+        </div>
+        <div class="form-group col-md-6">
+            <input style="border: solid thin;"name="modal" #modal="ngModel" [(ngModel)]="service.formData.modal" class="form-control" placeholder="Modal" >
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input style="border: solid thin;"name="nBlHawb" #nBlHawb="ngModel" [(ngModel)]="service.formData.nBlHawb" class="form-control" placeholder="Nº BL/HAWB" >
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-5">
+            <input style="border: solid thin;"name="anxSwift" class="form-control" placeholder="Swift">
+        </div>
+        <div class="form-group col-md-5">
+            <input style="border: solid thin;"name="anxContrato" class="form-control" placeholder="Contrato" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+
+    </div>
+</form>
