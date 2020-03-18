@@ -16,16 +16,16 @@
     </thead>
     <tbody>
         <tr *ngFor="let emp of list" class="trtable">
-            <td (click)="onEdit(emp)" width="10%">{{emp.dtVenc}} </td> 
-            <td (click)="onEdit(emp)" width="15%">{{emp.fullName}} </td>  
-            <td (click)="onEdit(emp)" width="10%">{{emp.vlDolar}}</td>
-            <td (click)="onEdit(emp)" width="10%">{{emp.cotacao}}</td>
-            <td (click)="onEdit(emp)" width="10%">{{emp.vlReal}}</td>
-            <td (click)="onEdit(emp)" width="10%">{{emp.dtFecha}}</td>
-            <td (click)="onEdit(emp)" width="10%">{{emp.banco}}</td>
-            <td (click)="onEdit(emp)" width="15%">{{emp.contrato}}</td>
-            <td (click)="onEdit(emp)" width="15%">{{emp.modal}}</td>
-            <td (click)="onEdit(emp)" width="15%">{{emp.nBlHawb}}</td>
+            <td (click)="onEdit(emp)" width="10%" height="30">{{emp.dtVenc}} </td> 
+            <td (click)="onEdit(emp)" width="18%" height="30">{{emp.fullName}} </td>  
+            <td (click)="onEdit(emp)" width="10%" height="30">{{emp.vlDolar}}</td>
+            <td (click)="onEdit(emp)" width="7%" height="30">{{emp.cotacao}}</td>
+            <td (click)="onEdit(emp)" width="10%" height="30">{{emp.vlReal}}</td>
+            <td (click)="onEdit(emp)" width="10%" height="30">{{emp.dtFecha}}</td>
+            <td (click)="onEdit(emp)" width="15%" height="30">{{emp.banco}}</td>
+            <td (click)="onEdit(emp)" width="10%" height="30">{{emp.contrato}}</td>
+            <td (click)="onEdit(emp)" width="15%" height="30">{{emp.modal}}</td>
+            <td (click)="onEdit(emp)" width="15%" height="30">{{emp.nBlHawb}}</td>
 
             <td><a class="btn tetx-danger" (click)="onDelete(emp.id)"><i class="fa fa-trash" style="color: red"></i></a> </td>
             <td><a class="btn tetx-danger"><i class="fa fa-pencil-square-o" aria-hidden="true" style="color:#FFD700"></i></a> </td>
