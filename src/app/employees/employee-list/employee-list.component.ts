@@ -21,14 +21,17 @@ export class EmployeeListComponent implements OnInit {
       this.list = actionArray.map(item => {
         return  {
              id: item.payload.doc.id,
-          ...(item.payload.doc.data() as Object) } as Employee;
-          
+          ...(item.payload.doc.data() as Object) } as Employee;    
       })
     });
   }
 
   onEdit(emp: Employee){
     this.service.formData = Object.assign({}, emp);
+    document.getElementById('open').click();
+    document.body.scrollTop = 1; // For Safari
+    document.documentElement.scrollTop = 10;
+    
   }
 
    onDelete(id: string){
@@ -37,5 +40,6 @@ export class EmployeeListComponent implements OnInit {
         this.toastr.warning('Deleted successfully', 'EMP. register')
       }
    } 
+
 
 }

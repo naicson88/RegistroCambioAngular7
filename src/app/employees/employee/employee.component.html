@@ -1,74 +1,83 @@
-<h1 class="display-6 card-header" style="margin-bottom: 20px;">Register</h1>
-<form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" >
-    <input type="hidden"  name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+<p>
+    <a class="btn btn-primary" id="open" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Cadastrar
+    </a>
+</p>
+<div class="collapse" id="collapseExample" width="256px">
+    <div class="card card-body">
+        <h1 class="display-6 card-header" style="margin-bottom: 20px;">Cadastrar</h1>
+        <form  #form="ngForm" autocomplete="on" (submit)="onSubmit(form)" class="formulario">
+            <input type="hidden"  name="id" #id="ngModel" [(ngModel)]="service.formData.id">
 
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <input style="border: solid thin;" name="dtVenc" #dtVenc="ngModel" [(ngModel)]="service.formData.dtVenc" class="form-control" placeholder="Vencimento">
-        </div>
-        <div class="form-group col-md-8">
-            <input style="border: solid thin;" name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Fornecedor" required>
-            <div *ngIf="fullName.invalid && fullName.touched" class="validation-error" style="color: red;">This field is required</div>
-        </div>
-    </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input style="border: solid thin;" name="dtVenc" #dtVenc="ngModel" [(ngModel)]="service.formData.dtVenc" class="form-control" type="date" placeholder="Vencimento">
+                </div>
+                <div class="form-group col-md-8">
+                    <input style="border: solid thin;" name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Fornecedor" required>
+                    <div *ngIf="fullName.invalid && fullName.touched" class="validation-error" style="color: red;">This field is required</div>
+                </div>
+            </div>
 
-    <div class="form-row" >
-        <div class="form-group col-md-4">
-            <input style="border: solid thin;"name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control" placeholder="Vl. Dólar">
-        </div>
-        <div class="form-group col-md-1" style="margin-left: -12px; margin-top: 1px;">
-            <td ><a class="btn tetx-danger"><i class="fa fa-plus-square fa-lg" aria-hidden="true" style="color: blue;"></i></a> </td>
-        </div>
-    </div>
-    <div class="form-row" >
-        <div class="form-group col-md-3">
-            <input style="border: solid thin;"name="cotacao" #cotacao="ngModel" [(ngModel)]="service.formData.cotacao" class="form-control" placeholder="Cotação">
-        </div>
-        <div class="form-group col-md-4">
-            <input style="border: solid thin;"name="vlReal" #vlReal="ngModel" [(ngModel)]="service.formData.vlReal" class="form-control" placeholder="Vl. Real">
-        </div>
-    </div>
+            <div class="form-row" >
+                <div class="form-group col-md-4">
+                    <input style="border: solid thin;"name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control" placeholder="Vl. Dólar">
+                </div>
+                <div class="form-group col-md-1" style="margin-left: -12px; margin-top: 1px;">
+                    <td ><a class="btn tetx-danger"><i class="fa fa-plus-square fa-lg" aria-hidden="true" style="color: blue;"></i></a> </td>
+                </div>
+            </div>
+            <div class="form-row" >
+                <div class="form-group col-md-3">
+                    <input style="border: solid thin;"name="cotacao" #cotacao="ngModel" [(ngModel)]="service.formData.cotacao" class="form-control" placeholder="Cotação">
+                </div>
+                <div class="form-group col-md-4">
+                    <input style="border: solid thin;"name="vlReal" #vlReal="ngModel" [(ngModel)]="service.formData.vlReal" class="form-control" placeholder="Vl. Real" ui-maskmoney data-prefix="R$" data-decimal="," data-thousands=".">
+                </div>
+            </div>
 
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <input style="border: solid thin;"name="dtFecha" #dtFecha="ngModel" [(ngModel)]="service.formData.dtFecha" class="form-control" placeholder="Fechamento">
-        </div>
-        <div class="form-group col-md-8">
-            <input style="border: solid thin;"name="banco" #banco="ngModel" [(ngModel)]="service.formData.banco" class="form-control" placeholder="Banco" required>
-        </div>
-    </div>
-    
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <input style="border: solid thin;"name="contrato" #contrato="ngModel" [(ngModel)]="service.formData.contrato" class="form-control" placeholder="Nº Contrato" >
-        </div>
-        <div class="form-group col-md-6">
-            <input style="border: solid thin;"name="modal" #modal="ngModel" [(ngModel)]="service.formData.modal" class="form-control" placeholder="Modal" >
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <input style="border: solid thin;"name="nBlHawb" #nBlHawb="ngModel" [(ngModel)]="service.formData.nBlHawb" class="form-control" placeholder="Nº BL/HAWB" >
-        </div>
-    </div>
-    <div class="custom-file" id="customFile" lang="es">
-        <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
-        <label class="custom-file-label" for="exampleInputFile">
-           Anexar Contrato
-        </label>
-    </div>
-    <div class="custom-file" id="customFile" lang="es">
-        <input type="file" class="custom-file-input c2" id="exampleInputFile" aria-describedby="fileHelp">
-        <label class="custom-file-label" for="exampleInputFile">
-           Anexar Swift
-        </label>
-    </div>
-      <!----  <div class="form-group">
-            <label class="custom-file-label" class="label">Anexar Contrato</label>
-            <input type="file" style="border: solid thin; background-color: white;"name="anxSwift" class="form-control-file">
-        </div> -->
-    <div class="form-group">
-        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info" style="width: 100px;">Enviar</button>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input style="border: solid thin;"name="dtFecha" #dtFecha="ngModel" [(ngModel)]="service.formData.dtFecha" class="form-control" placeholder="Fechamento">
+                </div>
+                <div class="form-group col-md-8">
+                    <input style="border: solid thin;"name="banco" #banco="ngModel" [(ngModel)]="service.formData.banco" class="form-control" placeholder="Banco" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input style="border: solid thin;"name="contrato" #contrato="ngModel" [(ngModel)]="service.formData.contrato" class="form-control" placeholder="Nº Contrato" >
+                </div>
+                <div class="form-group col-md-6">
+                    <input style="border: solid thin;"name="modal" #modal="ngModel" [(ngModel)]="service.formData.modal" class="form-control" placeholder="Modal" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input style="border: solid thin;"name="nBlHawb" #nBlHawb="ngModel" [(ngModel)]="service.formData.nBlHawb" class="form-control" placeholder="Nº BL/HAWB" >
+                </div>
+            </div>
+            <div class="custom-file" id="customFile" lang="es">
+                <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
+                <label class="custom-file-label" for="exampleInputFile">
+                Anexar Contrato
+                </label>
+            </div>
+            <div class="custom-file" id="customFile" lang="es">
+                <input type="file" class="custom-file-input c2" id="exampleInputFile" aria-describedby="fileHelp">
+                <label class="custom-file-label" for="exampleInputFile">
+                Anexar Swift
+                </label>
+            </div>
+            <!-- <div class="form-group">
+                    <label class="custom-file-label" class="label">Anexar Contrato</label>
+                    <input type="file" style="border: solid thin; background-color: white;"name="anxSwift" class="form-control-file">
+                </div> -->
+            <div class="form-group">
+                <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info" style="width: 100px;">Enviar</button>
 
+            </div>
+        </form>
     </div>
-</form>
+</div>
