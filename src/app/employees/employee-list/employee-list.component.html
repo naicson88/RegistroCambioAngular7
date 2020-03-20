@@ -2,6 +2,7 @@
     <thead>
         <th>Vencimento</th>
         <th>Fornecedor</th>
+        <th>Invoice</th>
         <th>Vl.Dólar</th>
         <th>Cotação</th>
         <th>Vl.Real</th>
@@ -17,7 +18,8 @@
     <tbody>
         <tr *ngFor="let emp of list" class="trtable">
             <td width="10%" height="30">{{emp.dtVenc}} </td> 
-            <td width="18%" height="30">{{emp.fullName}} </td>  
+            <td width="18%" height="30">{{emp.fullName}} </td>
+            <td width="18%" height="30">{{emp.invoice}} </td> 
             <td width="10%" height="30">{{emp.vlDolar}}</td>
             <td width="7%" height="30">{{emp.cotacao}}</td>
             <td width="10%" height="30">{{emp.vlReal}}</td>
