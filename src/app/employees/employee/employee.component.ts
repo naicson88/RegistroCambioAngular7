@@ -50,4 +50,5 @@ export class EmployeeComponent implements OnInit {
     this.toastr.success("Submitted successfully", "Emp. Register")
   }
 
+  
 }

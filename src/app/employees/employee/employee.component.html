@@ -11,7 +11,15 @@
 
             <div class="form-row">
                 <div class="form-group col-md-5">
-                    <input  name="dtVenc" #dtVenc="ngModel" [(ngModel)]="service.formData.dtVenc" class="form-control" type="date" placeholder="Vencimento">
+                    <input  name="dtVenc" #dtVenc="ngModel" [(ngModel)]="service.formData.dtVenc"  type="text"
+                    onkeyup="
+                        var v = this.value;
+                        if (v.match(/^\d{2}$/) !== null) {
+                            this.value = v + '/';
+                        } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+                            this.value = v + '/';
+                        }"
+                    maxlength="10" class="form-control" placeholder="Vencimento">
                 </div>
                 <div class="form-group col-md-8">
                     <input  name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Fornecedor" required>
@@ -24,7 +32,7 @@
                     <input id="invoice" name="invoice" #invoice="ngModel" [(ngModel)]="service.formData.invoice" class="form-control" placeholder="Invoice">
                 </div>
                 <div class="form-group col-md-5">
-                    <input id="vlDolar" name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control" type="text" data-affixes-stay="true" data-prefix="US$ " data-thousands="." data-decimal="," placeholder="Vl. Dólar">
+                    <input id="vlDolar" name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control mask2" placeholder="Vl. Dólar">
                 </div>
                 <div class="form-group col-md-1" style="margin-left: -12px; margin-top: 1px;">
                     <td ><a class="btn tetx-danger"><i class="fa fa-plus-square fa-lg" aria-hidden="true" style="color: blue;"></i></a> </td>
@@ -32,19 +40,19 @@
             </div>
             <div class="form-row" >
                 <div class="form-group col-md-3">
-                    <input id="cotacao" name="cotacao" #cotacao="ngModel" [(ngModel)]="service.formData.cotacao" class="form-control"  type="text" data-affixes-stay="true" data-prefix="R$ " data-thousands="." data-decimal=","  placeholder="Cotação">
+                    <input id="cotacao" name="cotacao" #cotacao="ngModel" [(ngModel)]="service.formData.cotacao" class="form-control mask"  placeholder="Cotação">
                 </div>
                 <div class="form-group col-md-4">
-                    <input id="vlReal" name="vlReal" #vlReal="ngModel" [(ngModel)]="service.formData.vlReal" class="form-control" placeholder="Vl. Real" type="text" data-affixes-stay="true" data-prefix="R$ " data-thousands="." data-decimal=",">
+                    <input id="vlReal" name="vlReal" #vlReal="ngModel" [(ngModel)]="service.formData.vlReal" class="form-control mask" mask-money="{prefix: 'R$ '}" ng-model="this.price" placeholder="Valor Real" >
                 </div>
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-4">
-                    <input name="dtFecha" #dtFecha="ngModel" [(ngModel)]="service.formData.dtFecha" class="form-control" placeholder="Fechamento">
+                <div class="form-group col-md-5">
+                        <input id="dtFecha" name="dtFecha" #dtFecha="ngModel" [(ngModel)]="service.formData.dtFecha" class="form-control" placeholder="Fechamento">
                 </div>
-                <div class="form-group col-md-8">
-                    <input name="banco" #banco="ngModel" [(ngModel)]="service.formData.banco" class="form-control" placeholder="Banco" required>
+                <div class="form-group col-md-7">
+                    <input name="banco" #banco="ngModel" [(ngModel)]="service.formData.banco" class="form-control" placeholder="Banco">
                 </div>
             </div>
             
@@ -58,7 +66,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input name="nBlHawb" #nBlHawb="ngModel" [(ngModel)]="service.formData.nBlHawb" class="form-control" placeholder="Nº BL/HAWB" >
+                    <input id="nBlHawb"  name="nBlHawb" #nBlHawb="ngModel" [(ngModel)]="service.formData.nBlHawb" class="form-control" placeholder="Nº BL/HAWB" >
                 </div>
             </div>
             <div class="custom-file" id="customFile" lang="es">
@@ -81,6 +89,11 @@
                 <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info" style="width: 100px;">Enviar</button>
 
             </div>
+         
         </form>
     </div>
 </div>
+
+<script>
+
+</script>
