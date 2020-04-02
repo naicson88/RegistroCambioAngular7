@@ -1,78 +1,77 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Register</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <style>
-
-      .register {
-       /*background-color:whitesmoke;
+    .register {
+      /*background-color:whitesmoke;
        border: solid thin royalblue;*/
-       margin-top: 30px;
-       margin-left: -100px;
-       
-      }
+      margin-top: 30px;
+      margin-left: -100px;
 
-      .tabela {
-          margin-top: 30px;
-          width:130%; 
-          margin-left: -100px;    
-      }
+    }
 
-      table thead {
-        text-align: center;
-      }
+    .tabela {
+      margin-top: 30px;
+      width: 130%;
+      margin-left: -100px;
+    }
 
-      table tbody tr {
-         COLOR:BLACK;
-          
-      }
+    table thead {
+      text-align: center;
+    }
 
-      .table td {
-        font-size: smaller;
-        padding: 1px;
-        text-align: center;
-        vertical-align:middle;
-        display: table-cell;   
-        border-top: -1px solid #dee2e6;     
-        
-      }
+    table tbody tr {
+      COLOR: BLACK;
 
-      .label {
-       
-        font-weight: bold;
-        margin-bottom: 0em;
-      }
+    }
 
-      .custom-file-input ~ .custom-file-label::after {
-    content: "Upload";
-    margin-bottom: 10px;
-}
+    .table td {
+      font-size: smaller;
+      padding: 1px;
+      text-align: center;
+      vertical-align: middle;
+      display: table-cell;
+      border-top: -1px solid #dee2e6;
 
-.n2 ~ .custom-file-label::after {
-    content: "Upload";
-}
+    }
 
-.custom-file {
-  margin-bottom: 10px;
-}
+    .label {
 
-.card-header{
-  background-color: royalblue;
-  color: aliceblue;
-  width: 107%;
+      font-weight: bold;
+      margin-bottom: 0em;
+    }
 
-  margin-left: -15px;
-  text-align: center;
-}
+    .custom-file-input~.custom-file-label::after {
+      content: "Upload";
+      margin-bottom: 10px;
+    }
 
+    .n2~.custom-file-label::after {
+      content: "Upload";
+    }
 
+    .custom-file {
+      margin-bottom: 10px;
+    }
+
+    .card-header {
+      background-color: royalblue;
+      color: aliceblue;
+      width: 107%;
+
+      margin-left: -15px;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -80,79 +79,71 @@
   <app-root style="max-width: none;"></app-root>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script>
 
-$(function(){
-  $(".mask").maskMoney({
-     prefix: 'R$ ',
-     allowNegative: true,
-     thousands: '.',
-     decimal: ','
-  });
-});
 
-$(function(){
-  $(".mask2").maskMoney({
-     prefix: 'US$ ',
-     allowNegative: true,
-     thousands: '.',
-     decimal: ','
-  });
-});
+// FUNÇÕES DE COLOCAR MASKMONEY 
+    $(function () {
+      $(".mask").maskMoney({
+        prefix: 'R$ ',
+        allowNegative: true,
+        thousands: '.',
+        decimal: ','
+      });
+    });
 
-/*
-$('.trtable').each(function(){
+    $(function () {
+      $(".mask2").maskMoney({
+        prefix: 'US$ ',
+        allowNegative: true,
+        thousands: '.',
+        decimal: ','
+      });
+    });
 
-  var venc = $(this).closest('td').attr('.venc').val()
-  var fech = $(this).closest('td').attr('.fech').val()
-   
-  if(venc != "" && fech == ""){
-    $(this).attr({'class':'table-warning'})
-  }
-})
+    //document.getElementById('submit').addEventListener("click", statusLançamento)
 
- 
-*/
-$( window ).on("load", function(){
-  isEmpty();
-  var waitTimeout = null
+    statusLançamento();
+    // vencidos();
+    var waitTimeout = null
 
-function isEmpty(){
-  clearTimeout(waitTimeout)
-      waitTimeout = setTimeout(function() { //faz com que a função carregue depois do firebase
-  var tr = document.getElementsByClassName('trtable');
-  console.log(tr.length)
-  debugger
-  $(".trtable").each(function(){
+    //VERIFICA LANÇAMENTOS SEM DATA DE FECHAMENTO
+    function statusLançamento() {
+      clearTimeout(waitTimeout)
+      waitTimeout = setTimeout(function () { //faz com que a função carregue depois do firebase
 
-    var venc = $(this).find('.venc').html();
-    var fech = $(this).find('.fech').html();
+        $(".trtable").each(function () {
+          var venc = $(this).find('.venc').html();
+          var paraDate = venc.split('/');
+          var stringFormatada = paraDate[1] + '-' + paraDate[0] + '-' + paraDate[2];
+          var dataFormatada1 = new Date(stringFormatada);
+          console.log(dataFormatada1)
 
-  if(venc !="" && fech == ""){
-    $(this).attr({'class':'table-warning'})
-        }
-      
-  })
-  
-      }, 5000)
+          var dataAtual = new Date();
+          //var dtAtual = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
 
-  }
 
-})
+          var fech = $(this).find('.fech').html();
 
-/*
-//Separa os valores 
-let dataString = document.getElementById("dtFecha").value().split("/");
+          if (venc != "" && fech == "" && dataFormatada1 > dataAtual) {
+            $(this).attr({ 'class': 'table-warning' })
+          } else if (venc != "" && fech == "" && dataFormatada1 < dataAtual) {
+            $(this).attr({ 'class': 'table-danger' })
+          }
 
-// Define a data com os valores separados 
-let data = new Date(dataString[2], dataString[1]-1, dataString[0]);
+        })
 
-console.log( data.toString() );
-console.log( data.toLocaleDateString("pt-BR") );*/
+      }, 2000)
 
-</script>
+    }
+
+  </script>
 </body>
 
 </html>
