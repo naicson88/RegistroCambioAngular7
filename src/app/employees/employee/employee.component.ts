@@ -27,6 +27,7 @@ export class EmployeeComponent implements OnInit {
       dtVenc : "",
       fullName : "",
       invoice : "",
+      di : "",
       vlDolar : "",
       parcela : "",
       cotacao: "",

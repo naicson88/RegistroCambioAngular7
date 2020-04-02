@@ -3,6 +3,7 @@ export class Employee {
     dtVenc : string;
     fullName: string;
     invoice: string;
+    di: string;
     vlDolar : string;
     parcela: string;
     cotacao : string;

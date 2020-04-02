@@ -1,8 +1,11 @@
-<table class="table table-striped table-sm tabela" >
+
+<table class="table table-striped table-sm tabela  table-bordered" >
     <thead>
+      <tr style="background-color: #CEF6EC" >  
         <th>Vencimento</th>
         <th>Fornecedor</th>
         <th>Invoice</th>
+        <th>Nº D.I</th>
         <th>Vl.Dólar</th>
         <th>Cotação</th>
         <th>Vl.Real</th>
@@ -12,25 +15,26 @@
         <th>Modal</th>
         <th>BL/HAWB</th>
         <th style="color: red;">Excluir</th>
-        <th style="color: #FFD700;">Editar</th>
-
+        <th style="color: #8A2BE2;">Editar</th>
+    </tr>
     </thead>
     <tbody>
         <tr *ngFor="let emp of list" class="trtable">
-            <td width="10%" height="30">{{emp.dtVenc}} </td> 
-            <td width="18%" height="30">{{emp.fullName}} </td>
-            <td width="18%" height="30">{{emp.invoice}} </td> 
-            <td width="10%" height="30">{{emp.vlDolar}}</td>
-            <td width="7%" height="30">{{emp.cotacao}}</td>
-            <td width="10%" height="30">{{emp.vlReal}}</td>
-            <td width="10%" height="30">{{emp.dtFecha}}</td>
-            <td width="15%" height="30">{{emp.banco}}</td>
-            <td width="10%" height="30">{{emp.contrato}}</td>
-            <td width="15%" height="30">{{emp.modal}}</td>
-            <td width="15%" height="30">{{emp.nBlHawb}}</td>
+            <td width="6%"  class="venc">{{emp.dtVenc}} </td> 
+            <td width="15%" >{{emp.fullName}} </td>
+            <td width="9%" >{{emp.invoice}} </td>  
+            <td width="8%" >{{emp.di}}</td> <!--50-->
+            <td width="10%" >{{emp.vlDolar}}</td>
+            <td width="6%" >{{emp.cotacao}}</td><!--70-->
+            <td width="10%" >{{emp.vlReal}}</td>
+            <td width="6%" class="fech">{{emp.dtFecha}}</td><!--90-->
+            <td width="12%" >{{emp.banco}}</td>
+            <td width="7%" >{{emp.contrato}}</td>
+            <td width="7%" >{{emp.modal}}</td>
+            <td width="13%" >{{emp.nBlHawb}}</td>
 
-            <td><a class="btn tetx-danger" (click)="onDelete(emp.id)"><i class="fa fa-trash" style="color: red"></i></a> </td>
-            <td><a class="btn tetx-danger"><i (click)="onEdit(emp)" class="fa fa-pencil-square-o" aria-hidden="true" style="color:#FFD700; scroll-behavior: smooth;" ></i></a> </td>
+            <td><a class="btn tetx-danger" (click)="onDelete(emp.id)"><i class="fa fa-trash" style="color: red" ></i></a> </td>
+            <td><a class="btn tetx-danger"><i (click)="onEdit(emp)" class="fa fa-pencil-square-o" aria-hidden="true"  style="color:#8A2BE2; scroll-behavior: smooth;" ></i></a> </td>
         </tr>
 
     </tbody>
