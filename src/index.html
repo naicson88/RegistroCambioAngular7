@@ -77,8 +77,9 @@
 
 <body>
   <app-root style="max-width: none;"></app-root>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
@@ -87,12 +88,12 @@
     crossorigin="anonymous"></script>
   <script>
 
-
+/*
 // FUNÇÕES DE COLOCAR MASKMONEY 
     $(function () {
       $(".mask").maskMoney({
         prefix: 'R$ ',
-        allowNegative: true,
+        allowNegative: false,
         thousands: '.',
         decimal: ','
       });
@@ -101,12 +102,16 @@
     $(function () {
       $(".mask2").maskMoney({
         prefix: 'US$ ',
-        allowNegative: true,
+        allowNegative: false,
         thousands: '.',
         decimal: ','
       });
-    });
+    });*/
 
+    $(function(){
+      $(".mask").maskMoney({thousands:".", decimal:",", prefix:"R$ ",affixesStay:true});
+    })
+    
     //document.getElementById('submit').addEventListener("click", statusLançamento)
 
     statusLançamento();
@@ -123,12 +128,10 @@
           var paraDate = venc.split('/');
           var stringFormatada = paraDate[1] + '-' + paraDate[0] + '-' + paraDate[2];
           var dataFormatada1 = new Date(stringFormatada);
-          console.log(dataFormatada1)
+
 
           var dataAtual = new Date();
           //var dtAtual = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
-
-
           var fech = $(this).find('.fech').html();
 
           if (venc != "" && fech == "" && dataFormatada1 > dataAtual) {

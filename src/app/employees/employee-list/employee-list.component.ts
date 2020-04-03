@@ -31,6 +31,7 @@ export class EmployeeListComponent implements OnInit {
     document.getElementById('open').click();
     document.body.scrollTop = 1; // For Safari
     document.documentElement.scrollTop = 10;
+    document.documentElement.scrollLeft = 10;
     
   }
 

@@ -31,13 +31,16 @@
                 <div class="form-group col-md-4">
                     <input id="invoice" name="invoice" #invoice="ngModel" [(ngModel)]="service.formData.invoice" class="form-control" placeholder="Invoice">
                 </div>
-                <div class="form-group col-md-6">
-                    <input id="di" name="di" #di="ngModel" [(ngModel)]="service.formData.di" class="form-control" placeholder="Nº D.I">
+                <div class="form-group col-md-5">
+                    <input id="tipo" name="tipo" #tipo="ngModel" [(ngModel)]="service.formData.tipo" class="form-control" placeholder="Tipo">
                 </div>
             </div>
             <div class="form-row" >
                 <div class="form-group col-md-5">
-                    <input id="vlDolar" name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control mask2" placeholder="Vl. Dólar">
+                    <input id="di" name="di" #di="ngModel" [(ngModel)]="service.formData.di" class="form-control" placeholder="Nº D.I">
+                </div>
+                <div class="form-group col-md-5">
+                    <input type="text" id="vlDolar" name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control mask2" placeholder="Vl. Dólar">
                 </div>
                 <div class="form-group col-md-1" style="margin-left: -12px; margin-top: 1px;">
                     <td ><a class="btn tetx-danger"><i class="fa fa-plus-square fa-lg" aria-hidden="true" style="color: blue;"></i></a> </td>
@@ -45,10 +48,10 @@
             </div>
             <div class="form-row" >
                 <div class="form-group col-md-3">
-                    <input id="cotacao" name="cotacao" #cotacao="ngModel" [(ngModel)]="service.formData.cotacao" class="form-control mask"  placeholder="Cotação">
+                    <input type="text" id="cotacao" name="cotacao" #cotacao="ngModel" [(ngModel)]="service.formData.cotacao" class="form-control mask"  placeholder="Cotação">
                 </div>
                 <div class="form-group col-md-4">
-                    <input id="vlReal" name="vlReal" #vlReal="ngModel" [(ngModel)]="service.formData.vlReal" class="form-control mask" mask-money="{prefix: 'R$ '}" ng-model="vm.price" placeholder="Valor Real" >
+                    <input id="vlReal" name="vlReal" #vlReal="ngModel" [(ngModel)]="service.formData.vlReal" class="form-control mask"  placeholder="Valor Real" >
                 </div>
             </div>
 
