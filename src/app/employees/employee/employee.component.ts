@@ -30,6 +30,7 @@ export class EmployeeComponent implements OnInit {
       tipo : "",
       di : "",
       vlDolar : "",
+      vlPago : "",
       parcela : "",
       cotacao: "",
       vlReal: "",
@@ -42,10 +43,21 @@ export class EmployeeComponent implements OnInit {
   }
 
   onSubmit(form:NgForm){
-    let data = Object.assign({}, form.value );
-    delete data.id;
-    if(form.value.id == null)
+   let data = Object.assign({}, form.value );
+   delete data.id;
+    if(form.value.id == null){
+      let cota = $("#cotacao").val();
+      let vlDolar = $("#vlDolar").val();
+      let vlPago = $("#vlPago").val();
+      let vlReal = $("#vlReal").val();
+    data.cotacao = cota;
+    data.vlDolar = vlDolar;
+    data.vlPago = vlPago;
+    data.vlReal = vlReal;
+
     this.firestore.collection('employees').add(data);
+    }
+             
   else
   this.firestore.doc('employees/' + form.value.id).update(data)
     this.resetForm(form);

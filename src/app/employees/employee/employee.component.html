@@ -11,7 +11,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-5">
-                    <input  name="dtVenc" #dtVenc="ngModel" [(ngModel)]="service.formData.dtVenc"  type="text"
+                    <input   id="dtVenc" name="dtVenc" #dtVenc="ngModel" [(ngModel)]="service.formData.dtVenc"  type="text"
                     onkeyup="
                         var v = this.value;
                         if (v.match(/^\d{2}$/) !== null) {
@@ -22,7 +22,7 @@
                     maxlength="10" class="form-control" placeholder="Vencimento">
                 </div>
                 <div class="form-group col-md-8">
-                    <input  name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Fornecedor" required>
+                    <input  id="fullName" name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Fornecedor" required>
                     <div *ngIf="fullName.invalid && fullName.touched" class="validation-error" style="color: red;">This field is required</div>
                 </div>
             </div>
@@ -40,13 +40,16 @@
                     <input id="di" name="di" #di="ngModel" [(ngModel)]="service.formData.di" class="form-control" placeholder="Nº D.I">
                 </div>
                 <div class="form-group col-md-5">
-                    <input type="text" id="vlDolar" name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control mask2" placeholder="Vl. Dólar">
+                    <input type="text" id="vlDolar" name="vlDolar" #vlDolar="ngModel" [(ngModel)]="service.formData.vlDolar" class="form-control mask2" placeholder="Vlr. Dólar">
                 </div>
                 <div class="form-group col-md-1" style="margin-left: -12px; margin-top: 1px;">
                     <td ><a class="btn tetx-danger"><i class="fa fa-plus-square fa-lg" aria-hidden="true" style="color: blue;"></i></a> </td>
                 </div>
             </div>
             <div class="form-row" >
+                <div class="form-group col-md-5">
+                    <input type="text" id="vlPago" name="vlPago" #vlPago="ngModel" [(ngModel)]="service.formData.vlPago" class="form-control mask2" placeholder="Vlr. Pago">
+                </div>
                 <div class="form-group col-md-3">
                     <input type="text" id="cotacao" name="cotacao" #cotacao="ngModel" [(ngModel)]="service.formData.cotacao" class="form-control mask"  placeholder="Cotação">
                 </div>

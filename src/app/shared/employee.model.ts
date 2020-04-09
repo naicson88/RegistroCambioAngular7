@@ -6,6 +6,7 @@ export class Employee {
     tipo: string;
     di: string;
     vlDolar : string;
+    vlPago : string;
     parcela: string;
     cotacao : string;
     vlReal : string;
