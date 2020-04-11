@@ -54,7 +54,7 @@
                     <input type="text" id="cotacao" name="cotacao" #cotacao="ngModel" [(ngModel)]="service.formData.cotacao" class="form-control mask"  placeholder="Cotação">
                 </div>
                 <div class="form-group col-md-4">
-                    <input id="vlReal" name="vlReal" #vlReal="ngModel" [(ngModel)]="service.formData.vlReal" class="form-control mask"  placeholder="Valor Real" >
+                    <input id="vlReal" name="vlReal" #vlReal="ngModel" [(ngModel)]="service.formData.vlReal" class="form-control mask"  placeholder="Valor Real" (click)="calcularSoma()" value="{{valorTotal}}">
                 </div>
             </div>
 
